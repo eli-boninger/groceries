@@ -1,5 +1,6 @@
 module Authentication
   extend ActiveSupport::Concern
+  include ActionController::Helpers
 
   included do
     before_action :require_authentication
