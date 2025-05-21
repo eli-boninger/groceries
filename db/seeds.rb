@@ -27,3 +27,21 @@ group1.owner_id = user1.id
 group2.owner_id = user4.id
 group1.save
 group2.save
+
+list1 = List.find_or_create_by!(name: "List 1") do |list|
+  list.user_group = group1
+end
+
+list1.save
+
+list2 = List.find_or_create_by!(name: "List 2") do |list|
+  list.user_group = group1
+end
+
+list2.save
+
+list3 = List.find_or_create_by!(name: "List 3") do |list|
+  list.user_group = group2
+end
+
+list3.save

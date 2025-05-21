@@ -29,5 +29,7 @@ module GroceriesApi
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
     config.middleware.use ActionDispatch::Cookies
+    config.session_store :cookie_store, key: "_groceries_api_session"
+    config.middleware.use ActionDispatch::Session::CookieStore
   end
 end
