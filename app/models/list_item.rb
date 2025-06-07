@@ -1,3 +1,4 @@
 class ListItem < ApplicationRecord
-  belongs_to :list
+  has_many :lists
+  has_many :lists, through: :list_entries
 end
